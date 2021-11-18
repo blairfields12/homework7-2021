@@ -12,28 +12,30 @@ document.querySelector("#play").addEventListener("click", function() {
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
-	console.log("Play Video");
+	console.log("Pause Video");
 	video.pause()
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	console.log(video.playbackRate);
 	video.playbackRate-=0.05;
+	console.log("New speed is " + video.playbackRate);
 });
 
 
 document.querySelector("#faster").addEventListener("click", function() {
-	console.log(video.playbackRate);
 	video.playbackRate+=0.05;
+	console.log("New speed is " + video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	console.log(video.currentTime);
+	console.log("Original location " + video.currentTime);
 	video.currentTime += 15;
+	console.log("New location " + video.currentTime);
 
-	if((video.currentTime>=video.duration)){
+	if(video.currentTime>=video.duration){
 		video.currentTime=0;
-		console.log(video.currentTime);
+		console.log("Going back to the beginning");
+		console.log("New location " + video.currentTime);
 	}
 });
 
